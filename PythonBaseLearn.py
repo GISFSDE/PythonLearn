@@ -357,8 +357,34 @@ print('Ru\noob')
 # 不转义字符串前加r
 print(2 * r'Ru\noob')
 
+
 # List（列表）------------------------------------------------------------------------------
+# 创建列表只需要方括号括起来，里面数据类型可不一致，索引正0反-1，
 # 列表中的元素是可以改变的
+# append() 追加  del 删除
+# ==列表脚本操作符==
+# Python 表达式	                              结果	             描述
+# len([1, 2, 3])	                        3	                 长度
+# [1, 2, 3] + [4, 5, 6]	                    [1, 2, 3, 4, 5, 6]	    组合
+# ['Hi!'] * 4	                             ['Hi!', 'Hi!', 'Hi!', 'Hi!']	重复
+# 3 in [1, 2, 3]	                        True	        元素是否存在于列表中
+# for x in [1, 2, 3]: print(x, end=" ")	    1 2 3	迭代
+# ==函数&方法==
+# len(list) 列表元素个数
+# max(list) 返回列表元素最大值
+# min(list) 返回列表元素最小值
+# list(seq) 将元组转换为列表
+# 1	list.append(obj) 在列表末尾添加新的对象
+# 2	list.count(obj) 统计某个元素在列表中出现的次数
+# 3	list.extend(seq) 在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+# 4	list.index(obj) 从列表中找出某个值第一个匹配项的索引位置
+# 5	list.insert(index, obj) 将对象插入列表
+# 6	list.pop([index=-1]) 移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+# 7	list.remove(obj) 移除列表中某个值的第一个匹配项
+# 8	list.reverse() 反向列表中元素
+# 9	list.sort( key=None, reverse=False) 对原列表进行排序
+# 10 list.clear() 清空列表
+# 11 list.copy() 复制列表
 lists = ['1', '2', '3', '4', '5']
 print(lists[:])
 print(lists[:3])
@@ -395,8 +421,22 @@ if __name__ == "__main__":
     print(rw)
 
 # Tuple（元组）--------------------------------------------------------------------
-# 元组（tuple）与列表类似，不同之处在于元组的元素不能修改，但它可以包含可变的对象。元组写在小括号 () 里，元素之间用逗号隔开。
+# 元组（tuple）与列表类似，不同之处在于元组的元素不能修改，其使用小括号（）或不要括号，
+# 但它可以包含可变的对象，可以连接组合成新元祖，元素不允许删除但可以使用del删除整个元祖。
 # string、list 和 tuple 都属于 sequence（序列）。
+# 当元祖只有一个元素时，后面添加逗号，否则括号会被当做运算符使用，tup1 = (50)为整型，tup1 = (50，)为元祖
+# ==元祖运算符==
+# Python 表达式	        结果	                     描述
+# len((1, 2, 3))	        3	                 计算元素个数
+# (1, 2, 3) + (4, 5, 6)	    (1, 2, 3, 4, 5, 6)	    连接
+# ('Hi!',) * 4  	('Hi!', 'Hi!', 'Hi!', 'Hi!')	复制
+# 3 in (1, 2, 3)	        True	            元素是否存在
+# for x in (1, 2, 3): print (x,)	1 2 3	        迭代
+# ==内置函数==
+# len(tuple) 计算元组元素个数。
+# max(tuple) 返回元组中元素最大值。
+# min(tuple) 返回元组中元素最小值。
+# tuple(iterable) 将可迭代系列转换为元组。
 tuple = ('abcd', 786, 2.23, 'runoob', 70.2)
 tinytuple = (123, 'runoob')
 
@@ -436,9 +476,25 @@ print(a ^ b)  # a 和 b 中不同时存在的元素
 # 字典（dictionary）是Python中另一个非常有用的内置数据类型。
 # 列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。
 # 字典是一种映射类型，字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。
-# 键(key)必须使用不可变类型。
+# 键(key)可以是任意类型，但必须使用不可变类型。
 # 在同一个字典中，键(key)必须是唯一的。
-
+# ==内置函数==
+# len(dict) 计算字典元素个数，即键的总数。
+# str(dict) 输出字典，以可打印的字符串表示。
+# type(variable) 返回输入的变量类型，如果变量是字典就返回字典类型。
+# ==内置方法==
+# 1	radiansdict.clear() 删除字典内所有元素
+# 2	radiansdict.copy()  返回一个字典的浅复制
+# 3	radiansdict.fromkeys()  创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
+# 4	radiansdict.get(key, default=None)  返回指定键的值，如果键不在字典中返回 default 设置的默认值
+# 5	key in dict 如果键在字典dict里返回true，否则返回false
+# 6	radiansdict.items() 以列表返回一个视图对象
+# 7	radiansdict.keys() 返回一个视图对象
+# 8	radiansdict.setdefault(key, default=None)  和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
+# 9	radiansdict.update(dict2) 把字典dict2的键/值对更新到dict里
+# 10 radiansdict.values() 返回一个视图对象
+# 11 pop(key[,default])  删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
+# 12 popitem()  随机返回并删除字典中的最后一对键和值
 dict = {}
 dict['one'] = "1 - 菜鸟教程"
 dict[2] = "2 - 菜鸟工具"
@@ -450,6 +506,9 @@ print(dict[2])  # 输出键为 2 的值
 print(tinydict)  # 输出完整的字典
 print(tinydict.keys())  # 输出所有键
 print(tinydict.values())  # 输出所有值
+del tinydict['name'] # 删除键 'name'
+dict.clear()     # 清空字典
+del tinydict         # 删除字典
 # 构造函数 dict() 可以直接从键值对序列中构建字典如下
 
 
