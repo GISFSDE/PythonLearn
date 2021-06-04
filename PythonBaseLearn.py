@@ -13,7 +13,7 @@ print("Hello word!")
 注释
 注释
 """
-# 保留字
+# 保留字  关键字end可以用于将结果输出到同一行，或者在输出的末尾添加不同的字符print(b, end=',')
 print("保留字", keyword.kwlist)
 
 # 缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数
@@ -453,8 +453,41 @@ sites = {'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu'}
 sites1 = {}
 sites2 = ()
 set()
-
-print(sites)  # 输出集合，重复的元素被自动去掉
+# # 添加元素，重复不操作
+# sites1.add("1")
+# # 可以添加列表，元祖字典等
+# sites1.update("1")
+# print(sites)  # 输出集合，重复的元素被自动去掉
+# # 移除，不存在报错
+# sites1.remove( x )
+# # 移除，不存在不报错
+# sites1.discard( x )
+# # 随机删除
+# sites1.pop()
+# # 长度
+# len(sites1)
+# # 清空
+# sites1.clear()
+# # 判断是否存在
+# x in s
+# ==内置方法完整列表==
+# add()	为集合添加元素
+# clear()	移除集合中的所有元素
+# copy()	拷贝一个集合
+# difference()	返回多个集合的差集
+# difference_update()	移除集合中的元素，该元素在指定的集合也存在。
+# discard()	删除集合中指定的元素
+# intersection()	返回集合的交集
+# intersection_update()	返回集合的交集。
+# isdisjoint()	判断两个集合是否包含相同的元素，如果没有返回 True，否则返回 False。
+# issubset()	判断指定集合是否为该方法参数集合的子集。
+# issuperset()	判断该方法的参数集合是否为指定集合的子集
+# pop()	随机移除元素
+# remove()	移除指定元素
+# symmetric_difference()	返回两个集合中不重复的元素集合。
+# symmetric_difference_update()	移除当前集合中在另外一个指定集合相同的元素，并将另外一个指定集合中不同的元素插入到当前集合中。
+# union()	返回两个集合的并集
+# update()	给集合添加元素
 
 # 成员测试
 if 'Runoob' in sites:
