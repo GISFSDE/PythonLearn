@@ -2,15 +2,36 @@
 =============基本语法=============
 '''
 import keyword
-
+# from modname import name1[, name2[, ... nameN]]
+# Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用，这个文件被称为模块。
+# 模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
 # 从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc
+# ====__name__属性====
+# 一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用__name__属性来使该程序块仅在该模块自身运行时执行。
+# #!/usr/bin/python3
+# # Filename: using_name.py
+
+# if __name__ == '__main__':
+#    print('程序自身在运行')
+# else:
+#    print('我来自另一模块')
+# ====dir() 函数====
+# 内置的函数 dir() 可以找到模块内定义的所有名称。以一个字符串列表的形式返回:
+'''
+输入和输出
+'''
+# Python两种输出值的方式: 表达式语句和 print() 函数。
+# 第三种方式是使用文件对象的 write() 方法，标准输出文件可以用 sys.stdout 引用。
+# 如果你希望输出的形式更加多样，可以使用 str.format() 函数来格式化输出值。
+# 如果你希望将输出的值转成字符串，可以使用 repr() 或 str() 函数来实现。
+# str()： 函数返回一个用户易读的表达形式。
+# repr()： 产生一个解释器易读的表达形式。
 print("Hello word!")
 
 ''' 
 注释 
 '''
 """
-注释
 注释
 """
 # 保留字  关键字end可以用于将结果输出到同一行，或者在输出的末尾添加不同的字符print(b, end=',')
@@ -394,7 +415,8 @@ print(lists[-1:])
 print(lists[:-2])
 print(lists * 3)  # 输出多次列表
 print(lists + lists)  # 连接列表
-
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
 
 def reverseWords(input):
     # 通过空格将字符串分隔符，把各个单词分隔为列表
@@ -534,6 +556,9 @@ dict[2] = "2 - 菜鸟工具"
 
 tinydict = {'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
 
+
+for k, v in knights.items():
+     print(k, v)
 print(dict['one'])  # 输出键为 'one' 的值
 print(dict[2])  # 输出键为 2 的值
 print(tinydict)  # 输出完整的字典
